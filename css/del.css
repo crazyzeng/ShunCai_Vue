@@ -1,0 +1,320 @@
+/*此中存放各细节的样式设置*/
+/*全局样式设置在basic.css中*/
+/**********header************/
+.header_style{
+	width: 100%;
+	/*min-width: 1348px;*/
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    text-align: center;
+    margin:0 auto;
+    background: #aaa;
+}
+#header_lf{
+    padding-left: 20px;
+}
+#header_rt{
+    padding-right: 20px;
+}
+header ul li{
+    float: left;
+    margin-left:10px ;
+}
+header ul li a:hover{
+color: #e4393c;
+text-decoration: underline;
+}
+
+/********************Nav**********************************/
+.nav_height{
+	width: 100%;
+	/*min-width: 1348px;*/
+	height:80px;
+}
+.nav_ul_style{
+	width:100%;
+	margin: 0 auto;
+    height: 80px;
+    background-color: #333;
+    position: relative;
+    float: left;
+    font-size: 18px;
+}
+.nav_ul_li{
+    height: 80px;
+    float: left;
+}
+#nav_ul li a{
+    display: inline-block;
+    color: aliceblue;
+    text-decoration: none;
+    padding:0 20px;
+    height: 80px;
+    line-height: 80px;
+}
+#nav_ul li a:hover{
+    background: #FFEA01;
+    color: #333;
+}
+#nav_logo p{
+	display: inline-block;
+    color: aliceblue;
+    text-decoration: none;
+    padding:0 20px;
+    height: 80px;
+    line-height: 80px;
+}
+#nav_logo p:hover{
+	cursor:pointer;
+}
+
+/******************nav_search*************************/
+.search{
+	/*建议单独设置width用js+-设置*/
+	/*width: 190px;*/
+	height: 80px;
+}
+#nav_ul .search input{
+    /*-webkit-appearance:;*/
+    height: 80px;
+    width: 150px;
+    position: absolute;
+    /*超宽屏幕情况，用户体验，等比放大？*/
+    right: 0;
+    background-color: #565B61;
+    color: #fff;
+/*    padding-right:30px;*/
+}
+.search_input{
+	padding-left: 10px;
+}
+#nav_ul li .search_current{
+    width: 14px;
+    height: 14px;
+    float: right;
+    position: absolute;
+    right: 0;
+    padding-right:10px;
+}
+#nav_ul li .search_current:hover {
+    background: none;
+}
+
+#nav_div{
+	height: 500px;
+	/*height: 100%;*/
+	width: 100%;
+	/*min-width: 1348px;*/
+}
+/***********right_box_fixed**************/
+#rt_fixed{
+	width:50px;
+	height: 160px;
+    overflow: hidden;
+    float: right;
+    position: fixed;
+    right: 0;
+    top:50%;
+}
+#rt_fixed ul{
+    width: 50px;
+    /*height: 200px;*/
+    float: right;
+    position: fixed;
+    right: 0;
+    top:50%;
+}
+#rt_fixed ul li{
+    float: left;
+}
+#rt_fixed ul li a{
+    float: left;
+}
+#rt_fixed div{
+	position: absolute;
+	right: 50px;
+	background:#eee;
+	width: 120px;
+	height: 49px;
+	line-height: 49px;
+	text-align: left;
+	padding-left: 15px;
+	display: none;
+}
+
+/*********************************footer*****************************************/
+#footer{
+    height: 180px;
+    text-align: center;
+
+}
+#footer div{
+    margin-top: 15px;
+}
+
+
+/***********************left_box************************************/
+
+#nav_left{
+    font-size: 18px;
+    margin-top: 20px;
+    background-color: #fff;
+    height: 100%;
+    width:35%;
+    /*min-width: 0%;*/
+}
+#nav_left ul li{
+	margin: 25px;
+}
+
+/******************************mid_box***********************************************/
+#nav_mid{
+    background-color: #fff;
+   	display: inline-block;
+   	width:30%;
+   	/*min-width: 500px;*/
+    height: 100%;
+    font-size: 18px;
+    margin-top: 20px;
+}
+/***************swiper***************************/
+.wrapper{position: relative;overflow: hidden;}
+.wrapper-content{position: absolute;left: 0;z-index: 1;}
+.wrapper-content_img{border: none;outline:none;float: left}
+.wrapper-buttons{position: absolute;width: 100px;height: 20px;text-align: center;bottom: 3px;z-index: 2;}
+.wrapper-button{float: left;width: 20px;height: 20px;border-radius: 10px;background: gray;margin: 0 2.5px;cursor: pointer;}
+.wrapper-arrow{position: absolute;width: 40px;height:40px;cursor: pointer;background-color: RGBA(0,0,0,.3); color: #fff;display: none;top:50%;line-height: 40px;font-size: 36px;text-align: center;z-index: 2;}
+.wrapper:hover .wrapper-arrow{display: block;background-color: rgba(0,0,0,.7);}
+.wrapper-prev{left:10px;}
+.wrapper-next{right:10px;}
+.wrapper_on{background-color: red}
+.wrapper_trans{transition: left .3s ease}
+
+/*.wrapper-content img{
+	min-width: 324px;
+}*/
+
+/*******************************right_box*******************************************/
+#nav_right{
+   	display: inline-block;
+    width: 35%;
+    /*min-width: 400px;*/
+    height: 100%;
+    font-size: 18px;
+    margin-top: 20px;
+    background-color: #fff;
+    float: left;
+/*由于样式不是实时的改变的，那么是否添加在浏览器窗口大小改变时，实时刷新？*/
+}
+#nav_right div{
+	margin: 25px;
+}
+/************************************hot_sell*********************************************/
+#hot_sell{
+
+}
+.box_header{
+    float: left;
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    border-bottom: 2px solid #e4393c;
+}
+.box_header span{
+    line-height: 50px;
+}
+.box_header span b{
+    margin-left: 10px;
+    font-size: 18px;
+    color: #e4393c;
+}
+.box_header span .rt{
+    margin-right: 10px;
+}
+
+/*********************hot_sell_img******************************/
+#hot_sell_img{
+	width: 100%;
+	/*height: 100%;*/
+	overflow: hidden;
+}
+#hot_sell_img ul{
+    float: left;
+}
+#hot_sell_img ul li{
+    float: left;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 4%;
+    width: 20%;
+}
+#hot_sell_img ul li a{
+    float: left;
+}
+
+#hot_sell_img ul li a img {
+    border: 2px solid #FFFBE0;
+    min-width: 200px;/*设置最小尺寸，在大屏情况下的设置，js控制，设置计算值*/
+}
+#hot_sell_img ul li a img:hover{
+    border: 2px solid #e4393c;
+}
+/*************************floor_box*************************/
+#floor .floor_box{
+    float: left;
+}
+#floor .floor_box ul{
+    float: left;
+}
+#floor .floor_box ul li{
+    float: left;
+    margin-top: 20px;
+    margin-left: 40px;
+    width:20%;
+}
+#floor .floor_box ul li a img{
+    float: left;
+    border:  2px solid #FFFBE0;
+}
+#floor .floor_box ul li a img:hover{
+    border: 2px solid #e4393c;
+}
+
+/*********************sup*********************/
+#sup{
+    text-align: center;
+    border-top: 2px solid #ddd;
+    margin-top: 50px;
+    padding-top: 20px;
+}
+#sup_ul{
+    /*width: 1420px;*/
+    height: 200px;
+    float: left;
+    margin: 0 auto;
+    font-size: 16px;
+    text-align: center;
+}
+#sup_ul ul{
+    width: 335px;
+}
+#sup_ul ul li{
+    margin: 10px auto;
+}
+#sup_ul ul li a{
+    color: #000;
+}
+#sup_ul ul li a:hover{
+    color: #e4393c;
+}
+#sup_ul .sup_ft_li{
+    font-weight: bold;
+    font-size: 18px;
+    color: #9d9d9d;
+}
+#sup_img{
+    width: 100%;
+    margin: 0 auto;
+    float: left;
+}

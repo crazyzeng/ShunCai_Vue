@@ -1,0 +1,43 @@
+/*在不考虑滚动条的情下，目前只运用vue的响应式，由于页面的原因，到时候设置一个最小尺寸minwidth和一个栅格系统，加上定时器的优化动效*/
+
+body{
+    font:12px "microsoft yahei",Arial;
+    color:#333;
+    margin:0;
+    padding:0;
+    background-color:#EDEEF2;
+    min-width: 1080px;
+    position: relative;
+}
+p,h1,h2,h3,h4,h5,h6,ul,li,dl,dt,dd{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+a{
+    list-style: none;
+    text-decoration: none;
+}
+input{
+    border: none;
+    margin: 0;
+    padding: 0;
+/*    padding-left: 10px;*/
+}
+
+input:focus{
+    outline: none;
+}
+.lf{float:left;}
+.rt{float:right;}
+.clear{clear:both;}
+.overflow_hidden{
+	overflow: hidden;
+}
+.show{
+	display: block;
+}
+.hide{
+	display: none;
+}
+/********************/

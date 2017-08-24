@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>顺才珠宝_Vue</title>
+		<link rel="stylesheet" href="css/basic.css" />
+		<link rel="stylesheet" href="css/del.css" />
+		<link rel="stylesheet" type="text/css" href="css/media.css"/>
+		
+		<link href="fav.ico" rel="icon" type="image/x-icon" />
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<header id="header" v-bind:class="header_style">
+			<ul v-bind:class="lf">
+				<li v-bind:class="lf">
+					<p>{{message}}</p>
+				</li>
+				<li v-for="info in headerLf" v-bind:class="lf">
+					<a href="#">{{info.text}}</a>
+				</li>
+			</ul>
+			<ul v-bind:class="rt">
+				<li v-for="fun in headerRt">
+					<a href="#">{{fun.text}}</a>
+				</li>
+			</ul>
+		</header>
+		
+		<nav id="nav" v-bind:class="nav_height">
+			<ul id="nav_ul" v-bind:class="nav_ul_style">
+				<li id="nav_logo" v-bind:class="nav_ul_li">
+					<p href="#">{{message}}</p>
+				</li>
+				<li v-for="del in nav_title" v-bind:class="nav_ul_li">
+					<a href="#">{{del.text}}</a>
+				</li>
+				
+				<li class="search" v-bind:class="rt">
+                	<input type="text" class="search_input">
+                	<a href="#" class="search_current">
+                    	<img src="img/index/search.png">
+                	</a>
+            	</li>
+			</ul>
+		</nav>
+		
+		<div id="nav_div">
+			<div id="nav_left" v-bind:class="[div_sides_bg,lf]" style="display: inline-block;">
+				<ul>
+            		 <li>
+                		<b><a href="#">{{necklace}}</a></b>
+                		<span v-bind:class="rt">
+                    		<a href="#" v-for="necklace in necklaces">{{necklace.text}}</a>
+                		</span>
+            		</li>
+            		<li>
+                		<b><a href="#">{{bracelet}}</a></b>
+                		<span v-bind:class="rt">
+                    		<a href="#" v-for="bracelet in bracelets">{{bracelet.text}}</a>
+                		</span>
+            		</li>
+            		<li>
+                		<b><a href="#">{{chain}}</a></b>
+                		<span v-bind:class="rt">
+                    		<a href="#" v-for="chain in chains">{{chain.text}}</a>
+                		</span>
+            		</li>
+            		<li>
+            			<!--简单的锚点跳转未加动画效果，认为必要添加animate效果-->
+                		<b><a  href="#first_F">{{jade}}</a></b>
+                		<span v-bind:class="rt">
+                    		<a href="#" v-for="jade in jades">{{jade.text}}</a>
+                		</span>
+            		</li>
+            		<li>
+                		<b><a href="#">{{roughJade}}</a></b>
+                		<span v-bind:class="rt">
+                    		<a href="#" v-for="roughJade in roughJades">{{roughJade.text}}</a>
+                		</span>
+            		</li>
+            		<li>
+                		<b><a href="#">{{buddha}}</a></b>
+                		<span v-bind:class="rt">
+                    		<a href="#" v-for="buddha in buddhas">{{buddha.text}}</a>
+                		</span>
+            		</li>
+            		<li>
+                		<b><a href="#">{{exquisiteGood}}</a></b>
+                		<span v-bind:class="rt">
+                    		<a href="#" v-for="exquisiteGood in exquisiteGoods">{{exquisiteGood.text}}</a>
+                		</span>
+            		</li>
+            		<li>
+                		<b><a href="#">{{foldingScreen}}</a></b>
+                		<span v-bind:class="rt">
+                    		<a href="#" v-for="foldingScreen in foldingScreenes">{{foldingScreen.text}}</a>
+                		</span>
+            		</li>
+            		<li>
+                		<b><a href="#">{{otherAccessory}}</a></b>
+                		<span v-bind:class="rt">
+                    		<a href="#" v-for="otherAccessory in otherAccessories">{{otherAccessory.text}}</a>
+                		</span>
+            		</li>
+				</ul>
+			</div>
+			<!--<div class="clear"></div>-->
+			<div id="nav_mid" :class="lf">
+				<div id="swiper"> 
+        			<div class="wrapper" :style="{width:originalData.img_width+'px',height:originalData.img_height+'px'}" @mouseover="stop" @mouseout="play">
+            			<div class="wrapper-content" :class="{wrapper_trans:isTrans}" :style="{width:originalData.img_width*(originalData.num+2)+'px',height:originalData.img_height+'px',left:-originalData.img_width+'px'}" ref="wrapperContent">
+            				<!--介于部分浏览器还不支持webP文件格式，在此设定点击看大图的全部用jpeg，只看不点的用webP文件格式-->
+            				<!--图片轮播的，暂时都用webp只看不点-->
+            				<!--新增的，在图片上增加alt属性“查看大图”，用jpeg，可看大图-->
+                			<img class="wrapper-content_img" alt="4" src="img/leaf/leaf1.webp" :style="{width:originalData.img_width+'px',height:originalData.img_height+'px'}"/>
+                			<img class="wrapper-content_img" alt="1" src="img/Avalokitesvara/Avalokitesvara1.webp" :style="{width:originalData.img_width+'px',height:originalData.img_height+'px'}"/>
+                			<img class="wrapper-content_img" alt="2" src="img/Buddha/Buddha1.webp" :style="{width:originalData.img_width+'px',height:originalData.img_height+'px'}"/>
+                			<img class="wrapper-content_img" alt="3" src="img/jade/jade1.webp" :style="{width:originalData.img_width+'px',height:originalData.img_height+'px'}"/>
+                			<img class="wrapper-content_img" alt="4" src="img/leaf/leaf1.webp" :style="{width:originalData.img_width+'px',height:originalData.img_height+'px'}"/>
+                			<img class="wrapper-content_img" alt="1" src="img/Avalokitesvara/Avalokitesvara1.webp" :style="{width:originalData.img_width+'px',height:originalData.img_height+'px'}"/>
+            			</div>
+            		<div class="wrapper-buttons" :style="{left:(originalData.img_width-100)/2+'px'}">
+                			<span :class="['wrapper-button',{'wrapper_on':index==1}]"  @click="turnTo(1)"></span>
+                			<span :class="['wrapper-button',{'wrapper_on':index==2}]"  @click="turnTo(2)"></span>
+                			<span :class="['wrapper-button',{'wrapper_on':index==3}]"  @click="turnTo(3)"></span>
+                			<span :class="['wrapper-button',{'wrapper_on':index==4}]"  @click="turnTo(4)"></span>
+            		</div>
+
+            			<a href="javascript:;" class="wrapper-arrow wrapper-prev" :style="{marginTop:-originalData.btn_width/2+'px'}" @click="prev">&lt;</a>
+            			<a href="javascript:;" class="wrapper-arrow wrapper-next" :style="{marginTop:-originalData.btn_width/2+'px'}" @click="next">&gt;</a>
+        			</div>
+    			</div>
+			</div>
+			
+			<div id="nav_right" v-bind:class="[div_sides_bg]">
+				<div>Introduce of company</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		
+		<div id="rt_fixed">
+			<ul>
+				<li>
+					 <a href="JavaScript:void(0)" style="position: relative;">
+					 	<img src="img/index/l04.png" >
+					 </a>
+					 <div>{{tel}}</div>
+				</li>
+				<li>
+					 <a href="JavaScript:void(0)" style="position: relative;">
+					 	<img src="img/index/l05.png" >
+					 </a>
+					 <div>{{QQ}}</div>
+				</li>
+				<li>
+					 <a href="JavaScript:void(0)"  id="goTop" style="position: relative;" @click="goTop">
+					 	<img src="img/index/l06.png" >
+					 </a>
+				</li>
+			</ul>
+		</div>
+		
+		
+		<div id="hot_sell">
+    		<div class="box_header">
+        		<span class="lf"><b>热销产品 HOT！</b></span>
+        		<span class="rt"><a href="#">更多商品&gt;&gt;</a></span>
+    		</div>
+    		<div id="hot_sell_img">
+        		<ul>
+            		<li v-for="hot_sell in hot_sells" >
+            			<!--此处可以直接打开webp文件，来显示大图-->
+                		<a href="JavaScript:void(0)">
+                			<!--如果考虑到超大屏的情况，那么应该按照等比尺寸来设置图片大小-->
+                    		<img :src="hot_sell.url" width="100%" title="查看大图" >
+                		</a>
+            		</li>
+        		</ul>
+    		</div>
+		</div>
+		<!--是否在此处，或是可以在此处添加点击图片后进入详情页页面-->
+		<div id="floor">
+			<div id="first_F">
+				<div class="box_header">
+            		<span class="lf"><b>1F&nbsp;&nbsp;&nbsp;观音</b></span>
+            		<span class="rt"><a href="#">更多商品&gt;&gt;</a></span>
+        		</div>
+        		<div class="floor_box">
+					<ul>
+						<li v-for="first_F in first_Fs">
+							<a href="JavaScript:void(0)">
+								<img :src="first_F.url" width="100%"/>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="second_F">
+				  <div class="box_header">
+            		<span class="lf"><b>2F&nbsp;&nbsp;&nbsp;笑佛</b></span>
+            		<span class="rt"><a href="#">更多商品&gt;&gt;</a></span>
+        			</div>
+        		<div class="floor_box">
+					<ul>
+						<li v-for="second_F in second_Fs">
+							<a href="JavaScript:void(0)">
+								<img :src="second_F.url" width="100%"/>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="third_F">
+				<div class="box_header">
+            		<span class="lf"><b>3F&nbsp;&nbsp;&nbsp;圆玉</b></span>
+            		<span class="rt"><a href="#">更多商品&gt;&gt;</a></span>
+        		</div>
+        		<div class="floor_box">
+					<ul>
+						<li v-for="third_F in third_Fs">
+							<a href="JavaScript:void(0)">
+								<img :src="third_F.url" width="100%"/>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="fourth_F">
+				<div class="box_header">
+            		<span class="lf"><b>4F&nbsp;&nbsp;&nbsp;叶子玉</b></span>
+            		<span class="rt"><a href="#">更多商品&gt;&gt;</a></span>
+        		</div>
+        		<div class="floor_box">
+					<ul>
+						<li v-for="fourth_F in fourth_Fs">
+							<a href="JavaScript:void(0)">
+								<img :src="fourth_F.url" width="100%"/>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--辅助信息-->
+<div id="sup">
+    <div id="sup_ul">
+    <ul class="lf">
+        <li class="sup_ft_li">{{cat}}</li>
+        <li v-for="condition in conditions">
+        	<a href="JavaScript:void(0)">{{condition.text}}</a>
+        </li>
+        
+    </ul>
+    <ul class="lf">
+        <li class="sup_ft_li">{{fresh}}</li>
+        <li v-for="help in helps">
+        	<a href="JavaScript:void(0)">{{help.text}}</a>
+        </li>
+    </ul>
+    <ul class="lf">
+        <li class="sup_ft_li">{{pay_way}}</li>
+        <li v-for="pay in pays">
+        	<a href="JavaScript:void(0)">{{pay.text}}</a>
+        </li>
+    </ul>
+    <ul class="lf">
+        <li class="sup_ft_li">{{sup_shop}}</li>
+        <li v-for="sup in sups">
+        	<a href="JavaScript:void(0)">{{sup.text}}</a>
+        </li>
+    </ul>
+    </div>
+    <div id="sup_img">
+        <img src="img/index/sup.png">
+    </div>
+    <div class="clear"></div>
+</div>
+<!--网页底部-->
+<footer id="footer">
+        <div class="links">            
+			<a href="JavaScript:void(0)" v-for="footer_link in footer_links">{{footer_link.text}}</a>
+        </div>
+        <div id="copyright">
+            <a href="JavaScript:void(0)">相关证件编号[20XX]0XX00-0XXXXXX0号 </a> Copyright © 20XX-20XX SHUNCAIZHUBAO.com 版权所有
+        </div>
+</footer>
+<div class="clear"></div>
+		<script src="js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vue_style.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/stru.js" type="text/javascript" charset="utf-8"></script>
+		<!--如果，当前浏览器不支持webP文件格式的图片，则引入下面的js文件使浏览器通过一种方式，识别webP文件格式-->
+		
+<!--		<script src="js/webP.js"></script>
+-->
+		<script type="text/javascript">
+			//判断是否支持webP图片格式
+			function checkWebp() {
+				try{
+					return(document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') == 0);
+					}catch(err) {
+					return false;
+					}
+				}
+				console.log(checkWebp()); // true or false
+				var webP = checkWebp();
+				if(webP=false){
+					console.log(webP)
+//					alert("当前浏览器不支持WebP格式图片，请用chrome浏览器或高版本的火狐浏览器（54.0.1及以上）")
+					loadScript("js/webP.js");
+				}
+				
+    		function loadScript(url) {
+        			var script = document.createElement("script");
+        			script.type = "text/javascript";
+        			script.src = url;
+        			document.body.appendChild(script);
+        			
+    			}
+    				//loadScript("js/webP.js");
+				
+				
+		</script>
+		<script type="text/javascript">
+			
+			$(function () {
+				
+			var nav_search_width = $('.search_input').width();
+			var nav_search_height = $('.search_input').height();
+			var nav_left_width = $('#nav_left').width();
+			var nav_right_width = $('#nav_right').width();
+			
+				$('.search').css('height',nav_search_height);
+				$('.search_current').css('height',nav_search_height);
+				
+				$(window).resize(function () {
+				
+				$('.search').css('height',nav_search_height);
+				$('.search_current').css('height',nav_search_height);
+				})
+				
+				
+			});
+			
+			
+		</script>
+		<script type="text/javascript">
+			$(window).resize(function () {          //当浏览器大小变化时
+			//动态响应屏幕尺寸，调整对应div的尺寸
+			var swiper = $('#swiper').width();
+			$('.wrapper').css('width',swiper);
+});
+		</script>
+		
+		<!--锚点跳转，平滑滚动-->
+		<script type="text/JavaScript">  
+			$(document).ready(function() {  
+    			$('a[href*=#]').click(function() {  
+        			if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {  
+            			var $target = $(this.hash);  
+            			$target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');  
+            			if ($target.length) {  
+                		var targetOffset = $target.offset().top;  
+               			 $('html,body').animate({  
+                    		scrollTop: targetOffset  
+                		},  
+                			1000);  
+                		return false;  
+            		}  
+        		}  
+    		});  
+		});  
+</script>  
+		
+		
+	</body>
+</html>
+
+
+
+
